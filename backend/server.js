@@ -17,7 +17,7 @@ const db = mysql.createConnection({
   host: 'localhost',  // Database host, usually 'localhost' in local development
   user: 'root',       // Default username in XAMPP
   password: '',       // Leave blank if no password is set in XAMPP
-  database: 'jwt_auth_db',  // Database name
+  database: 'cycling_tracker',  // Database name
 });
 
 // Connect to the MySQL database

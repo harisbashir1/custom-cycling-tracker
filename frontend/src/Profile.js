@@ -39,29 +39,7 @@ const Profile = () => {
         </ul>
       </nav>
       
-      <p style={{ fontSize: '1.2rem', color: '#555', textAlign: 'justify', marginBottom: '20px' }}>
-        This is your profile page. You can navigate to other pages using the links above.
-      </p>
 
-      {/* Explanation Paragraph */}
-      <div style={{ marginTop: '20px', padding: '10px', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
-        <h3 style={{ fontSize: '1.5rem', color: '#007bff', marginBottom: '15px' }}>Understanding JWT-Based Access</h3>
-        <p style={{ fontSize: '1.1rem', color: '#555', lineHeight: '1.6' }}>
-          Since we have implemented **JWT authentication**, you were able to navigate from the dashboard to this profile page 
-          because the JWT token is stored in the browser’s **localStorage**. As long as the JWT token exists and is valid, 
-          you can access private pages like this profile page.
-        </p>
-        <p style={{ fontSize: '1.1rem', color: '#555', lineHeight: '1.6' }}>
-          However, if you log out, the JWT token will be removed from **localStorage**, which means you will no longer 
-          be authenticated. If you try to access this profile page after logging out, you will be redirected to the login page because 
-          the site will no longer recognize you as a logged-in user. To test this, log out and then try to come back to the profile page 
-          using the direct link—you will see that access is blocked.
-        </p>
-        <p style={{ fontSize: '1.1rem', color: '#555', lineHeight: '1.6' }}>
-          This demonstrates how the **Profile** page acts as a **private page** that can only be accessed if the user is logged in. 
-          Without a valid JWT token, the site will deny access to any private pages.
-        </p>
-      </div>
     </div>
   );
 };
