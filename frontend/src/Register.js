@@ -27,11 +27,6 @@ const Register = () => {
     }
   };
 
-  const handleCopy = () => {
-    const codeText = document.getElementById('sql-code').innerText;
-    navigator.clipboard.writeText(codeText);
-    alert('SQL code copied to clipboard');
-  };
 
   return (
     <div className="container" style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>

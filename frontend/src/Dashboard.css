@@ -1,0 +1,50 @@
+/* Container styling */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Dashboard Title */
+  .dashboard-title {
+    font-size: 2rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Navigation styling */
+  .dashboard-nav {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  /* Navigation Links */
+  .nav-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #007bff;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+  }
+  
+  /* Logout Button */
+  .logout-button {
+    font-size: 1.2rem;
+    color: #007bff;
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }

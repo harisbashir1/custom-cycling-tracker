@@ -1,30 +1,41 @@
 import React from 'react';
+import './HomePage.css';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const token = localStorage.getItem('token'); // Check if the user is logged in
 
   return (
-    <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px', fontFamily: 'Arial, sans-serif', lineHeight: '1.6' }}>
+    <div className="container">
       {/* Header */}
-      <header style={{ textAlign: 'center', marginBottom: '30px' }}>
-        <h1 style={{ fontSize: '2.5rem', color: '#333' }}>Cycling Progress Tracker</h1>
-        <nav style={{ marginTop: '20px' }}>
-          <ul style={{ listStyleType: 'none', padding: '0', display: 'flex', justifyContent: 'center', gap: '20px' }}>
-            <li><Link to="/login" style={{ textDecoration: 'none', fontSize: '1.2rem', color: '#007bff' }}>Login</Link></li>
-            <li><Link to="/register" style={{ textDecoration: 'none', fontSize: '1.2rem', color: '#007bff' }}>Register</Link></li>
-            {token && <li><Link to="/dashboard" style={{ textDecoration: 'none', fontSize: '1.2rem', color: '#007bff' }}>Dashboard</Link></li>}
+      <header className="header">
+        <h1 className="title">Cycling Progress Tracker</h1>
+        <nav className="nav">
+          <ul className="nav-list">
+            <li><Link to="/login" className="nav-link">Login</Link></li>
+            <li><Link to="/register" className="nav-link">Register</Link></li>
+            {token && <li><Link to="/dashboard" className="nav-link">Dashboard</Link></li>}
           </ul>
         </nav>
       </header>
 
       {/* Main Content */}
-      <main>    
+      <main>
+        <h4>test</h4>
       </main>
 
       {/* Footer */}
-      <footer style={{ textAlign: 'center', padding: '10px 0', borderTop: '1px solid #ddd', backgroundColor: '#f5f5f5' }}>
-        <p style={{ fontSize: '0.9rem', color: '#777' }}>&copy;Cycling progress tracker - <a href="https://github.com/harisbashir1/custom-cycling-tracker" target="_blank" > github.com/harisbashir1/custom-cycling-tracker</a></p>
+      <footer className="footer">
+        <p>
+          &copy;Cycling progress tracker - 
+          <a 
+            href="https://github.com/harisbashir1/custom-cycling-tracker" 
+            target="blank" 
+            className="footer-link"
+          >
+            github.com/harisbashir1/custom-cycling-tracker
+          </a>
+        </p>
       </footer>
     </div>
   );

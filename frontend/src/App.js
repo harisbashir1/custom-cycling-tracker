@@ -1,4 +1,3 @@
-// Author: Anik Tahabilder
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Importing routing components from react-router-dom
 import HomePage from './HomePage';  // Importing the HomePage component
 import Login from './Login';  // Importing the Login component
