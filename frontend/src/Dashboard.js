@@ -16,8 +16,9 @@ const workoutTimestamps = [
 const Dashboard = () => {
   const navigate = useNavigate();
 
-  const [healthData, setHealthData] = useState([]);
-  const [heartRateReadings, setHeartRateReadings] = useState([])
+  const [heartRateReadings, setHeartRateReadings] = useState([]);
+  const [cyclingWorkouts, setCyclingWorkouts]  = useState([]);
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleStoringHeartRates = (completeHeartRateData) => {
 
@@ -46,10 +47,11 @@ const Dashboard = () => {
   const handleFileUpload = async (event) => {
     const XMLfile = event.target.files[0];
     try {
-      const parsedData = await parseHealthData(XMLfile); 
-      console.log(parsedData);
-      setHealthData(parsedData);
-      handleStoringHeartRates(parsedData);
+      const { heartRateRecords, cyclingWorkouts} = await parseHealthData(XMLfile,setUploadProgress); 
+      console.log('Heart Rate Records:', heartRateRecords);
+      console.log('Cycling Workouts:', cyclingWorkouts);
+      setCyclingWorkouts(cyclingWorkouts);
+      handleStoringHeartRates(heartRateRecords);
     } catch (error) {
       console.log(error);
     }
@@ -86,12 +88,19 @@ const Dashboard = () => {
               accept=".xml"
               onChange={(event) => handleFileUpload(event)} />
             <button onClick={() => handleButtonClick()}>Load my Data</button>
+            <h2>Progress: {uploadProgress.toFixed(1)}%</h2>
         </div>
 
         <div>
-          <h1>Data from file: (for testing)</h1>
+          <h1>Heart Rate Readings (for testing)</h1>
           {heartRateReadings ? (
               <pre>{JSON.stringify(heartRateReadings, null, 2)}</pre>
+            ) : (
+              <p>No data uploaded yet. Please upload a file.</p>
+            )}
+            <h1>Cycling Workouts (for testing)</h1>
+          {cyclingWorkouts ? (
+              <pre>{JSON.stringify(cyclingWorkouts, null, 2)}</pre>
             ) : (
               <p>No data uploaded yet. Please upload a file.</p>
             )}
